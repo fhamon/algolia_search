@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension id="algolia_search" status="experimental" xmlns="http://getsymphony.com/schemas/extension/1.0">
+	<name>Algolia Search</name>
+	<description>Search your content inside Symphony with a simple interface.</description>
+	<types>
+		<type>Search</type>
+		<type>Symphony UI</type>
+	</types>
+	<authors>
+		<author>
+			<name github="fhamon">Frederick Hamon</name>
+		</author>
+	</authors>
+	<releases>
+		<release version="1.0.0" date="2019-04-25" min="4.0.x" />
+	</releases>
+</extension>

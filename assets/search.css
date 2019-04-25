@@ -1,0 +1,150 @@
+#search {
+	color: var(--color-main);
+	width: 5%;
+	margin: 0 1rem;
+	position: relative;
+	z-index: 99;
+	transition-property: width;
+	transition-duration: 150ms;
+	transition-timing-function: ease-out;
+	max-width: 500px;
+}
+
+#search:focus-within {
+	width: 100%;
+}
+
+@media (max-width: 1023px) {
+	#search {
+		margin: 0 var(--spacing-smallerish);
+	}
+}
+
+#search-bar {
+	width: 5%;
+	color: var(--color-main);
+	border-radius: var(--radius-current);
+	padding: 1.4rem 0;
+	padding-left: 4rem;
+	line-height: 1em;
+	font-size: 1.4rem;
+	white-space: nowrap;
+	overflow: hidden;
+	max-width: 100%;
+	box-sizing: border-box;
+	z-index: 101;
+	transition-property: background-color, color, width;
+	transition-duration: 150ms;
+	transition-timing-function: ease-out;
+	margin-top: -3px;
+	cursor: pointer;
+}
+
+#search-bar:focus {
+	cursor: text;
+	width: 100%;
+	background-color: var(--color-accent-light);
+}
+
+#search-bar .verb {
+	opacity: 0.5;
+}
+
+#search.is-open #search-bar {
+	outline: none;
+}
+
+#search.is-open.is-content-visible #search-bar {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+#search.is-open .icon {
+	color: var(--color-main);
+}
+
+#search-bar:empty::before {
+	content: attr(data-placeholder);
+	opacity: 0.5;
+}
+
+#search .icon {
+	position: absolute;
+	z-index: 102;
+	top: calc(50% - 0.1rem);
+	bottom: 0;
+	left: 1.2rem;
+	width: 1.7rem;
+	display: flex;
+	align-items: center;
+	transform: translateY(-50%);
+	justify-content: center;
+	transition-property: color;
+	transition-duration: 150ms;
+	transition-timing-function: ease-out;
+	pointer-events: none;
+}
+
+#tools:not(:empty) > a {
+	min-height: 4rem;
+	display: flex;
+	align-items: center;
+	padding: 0 1.5rem;
+}
+
+#search #search-results {
+	background-color: var(--color-clear);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	right: 0;
+	box-shadow: var(--shadow);
+	opacity: 0;
+	pointer-events: none;
+}
+
+#search.is-content-visible #search-results {
+	opacity: 1;
+	pointer-events: all;
+}
+
+#search #search-results > * {
+	all: unset;
+	width: 100%;
+	background-color: var(--color-clear);
+	color: var(--color-main);
+	cursor: pointer;
+	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+	box-sizing: border-box;
+	align-items: center;
+}
+
+#search #search-results .search-label {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+#search #search-results .search-section-name {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+#search #search-results .search-section-name {
+	opacity: 0.5;
+}
+
+@media (max-width: 1023px) {
+	#search #search-results .search-section-name {
+		display: none;
+	}
+}
+
+#search #search-results > *.is-active {
+	background-color: var(--color-accent-alt-light);
+}
