@@ -1,3 +1,7 @@
+#tools {
+	display: flex !important;
+}
+
 #search {
 	color: var(--color-main);
 	width: 5%;
@@ -5,7 +9,7 @@
 	position: relative;
 	z-index: 99;
 	transition-property: width;
-	transition-duration: 150ms;
+	transition-duration: 500ms;
 	transition-timing-function: ease-out;
 	max-width: 500px;
 }
@@ -17,6 +21,7 @@
 @media (max-width: 1023px) {
 	#search {
 		margin: 0 var(--spacing-smallerish);
+		width: 100%;
 	}
 }
 
@@ -34,7 +39,7 @@
 	box-sizing: border-box;
 	z-index: 101;
 	transition-property: background-color, color, width;
-	transition-duration: 150ms;
+	transition-duration: 500ms;
 	transition-timing-function: ease-out;
 	margin-top: -3px;
 	cursor: pointer;
@@ -44,6 +49,14 @@
 	cursor: text;
 	width: 100%;
 	background-color: var(--color-accent-light);
+}
+
+@media (max-width: 1023px) {
+	#search-bar {
+		cursor: text;
+		width: 100%;
+		background-color: var(--color-accent-light);
+	}
 }
 
 #search-bar .verb {
